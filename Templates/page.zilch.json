@@ -1,0 +1,232 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+    "layout": "theme.revbalance",
+    "sections": {
+      "main": {
+        "type": "main-page",
+        "disabled": true,
+        "settings": {
+          "padding_top": 36,
+          "padding_bottom": 36
+        }
+      },
+      "zegsu-header-bar": {
+        "type": "apps",
+        "disabled": true,
+        "settings": {
+          "include_margins": true
+        }
+      },
+      "zilch_header_NTEwUN": {
+        "type": "zilch-header",
+        "settings": {
+          "img": "shopify:\/\/shop_images\/logo.svg",
+          "imglink": "#",
+          "img_width": 100,
+          "img_alignment": "0px auto 0px"
+        }
+      },
+      "zilch_banner_d3h44Y": {
+        "type": "zilch-banner",
+        "blocks": {
+          "content_WrxfKP": {
+            "type": "content",
+            "settings": {
+              "title": "Pay Zilch.",
+              "des": "Pay over 6 weeks with 0% APR, zero fees, zero overdraft fees and zero credit impact when you sign up. Or Pay now and get 2% back in Zilch Rewards instantly.",
+              "sub_des": "What’s not to love?",
+              "app_title": "Download the App",
+              "app_img": "shopify:\/\/shop_images\/0fntypvv_qr_code.svg"
+            }
+          },
+          "image_8bYytb": {
+            "type": "image",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/6092fdaff22c6b00185dc443.jpg",
+              "aspect-ratio": "8\/8"
+            }
+          }
+        },
+        "block_order": [
+          "content_WrxfKP",
+          "image_8bYytb"
+        ],
+        "settings": {
+        }
+      },
+      "zilch_about_us_9PimTz": {
+        "type": "zilch-about-us",
+        "blocks": {
+          "image_Rzypqf": {
+            "type": "image",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/skynews-zilch-fintech_5455211.jpg",
+              "aspect-ratio": "8\/6"
+            }
+          },
+          "content_PfFHnd": {
+            "type": "content",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/472241699419063450-211c6446-da35-4c83-875e-84585ed91ef5.png",
+              "title": "See anything you like? Zilch it.",
+              "des": "We have thousands of online stores with zero fees.  And because we’re a Mastercard, you can shop absolutely anywhere else online with a fee of up to $3 for purchases over $10.",
+              "btn_text": "Explore Brands",
+              "btn_url": "#"
+            }
+          }
+        },
+        "block_order": [
+          "image_Rzypqf",
+          "content_PfFHnd"
+        ],
+        "settings": {
+        }
+      },
+      "zilch_text_image_dKiyjA": {
+        "type": "zilch-text-image",
+        "blocks": {
+          "content_eUaJ8h": {
+            "type": "content",
+            "settings": {
+              "title": "Why Pay over 6 weeks?",
+              "des": "<ul><li>It’s ideal for bigger buys <\/li><li>At checkout\u2028You’ll pay either 25% or 50% plus fees<\/li><li>We’ll split the rest into three installments<\/li><\/ul>"
+            }
+          },
+          "image_qEWwGK": {
+            "type": "image",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/Stocksy_comp_4433439-1.png",
+              "aspect-ratio": "8\/8"
+            }
+          }
+        },
+        "block_order": [
+          "content_eUaJ8h",
+          "image_qEWwGK"
+        ],
+        "settings": {
+        }
+      },
+      "zilch_rich_text_xnkc8d": {
+        "type": "zilch-rich-text",
+        "settings": {
+          "title": "Responsible.",
+          "sub_des": "Why Pay now?.",
+          "des": "<p>Get 2% back in Zilch Rewards instantly. Nice, right? Use your Rewards towards your next purchase or save them up for something special.<\/p>"
+        }
+      },
+      "zilch_bg_section_mKWhR6": {
+        "type": "zilch-bg-section",
+        "settings": {
+          "bg_img": "shopify:\/\/shop_images\/physed-happiness-superJumbo.jpg",
+          "title": "Join over 3,000,000 Customers Worldwide"
+        }
+      },
+      "zilch_review_slider_eDcE8z": {
+        "type": "zilch-review-slider",
+        "blocks": {
+          "slider_k9TQfD": {
+            "type": "slider",
+            "settings": {
+              "des": "This is a great way to do your\nshopping. Easy to set up. So happy.",
+              "name": "Cheryl Chamberlain",
+              "img": "shopify:\/\/shop_images\/472241699419063450-f449e298-2b25-4b8b-9857-24668ab72a1b.png"
+            }
+          },
+          "slider_6mXkaq": {
+            "type": "slider",
+            "settings": {
+              "des": "This app is amazing. I love it!",
+              "name": "James Bird",
+              "img": "shopify:\/\/shop_images\/472241699419063450-f449e298-2b25-4b8b-9857-24668ab72a1b.png"
+            }
+          }
+        },
+        "block_order": [
+          "slider_k9TQfD",
+          "slider_6mXkaq"
+        ],
+        "settings": {
+          "title": "We’re getting lots of love."
+        }
+      },
+      "zilch_image_box_mHnWVg": {
+        "type": "zilch-image-box",
+        "blocks": {
+          "image_box_qCgmyL": {
+            "type": "image_box",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/stay-on-top-of-your-payments-1000x1000-1.png",
+              "title": "Stay on top of payments.",
+              "text": "<p>See all your purchases in the app, pay early whenever you like and always get notified of upcoming payments. <\/p>"
+            }
+          },
+          "image_box_Nj4eqR": {
+            "type": "image_box",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/tailored-to-you-1000x1000-1.png",
+              "title": "Tailored to you.",
+              "text": "<p>A spend limit that’s tailored to you  and builds over time as you make your scheduled payments.<\/p>"
+            }
+          },
+          "image_box_LMxp3m": {
+            "type": "image_box",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/Stocksy_txpb0a82b83KZM300_Large_2730840_colour-copy-11.png",
+              "title": "Security comes first.",
+              "text": "<p>We protect your account by using:<\/p><ul><li>Multi Factor Verification<\/li><li>Data Encryption<\/li><li>Payment Authentication<\/li><\/ul>"
+            }
+          }
+        },
+        "block_order": [
+          "image_box_qCgmyL",
+          "image_box_Nj4eqR",
+          "image_box_LMxp3m"
+        ],
+        "settings": {
+        }
+      },
+      "zilch_text_buttom_7REYqm": {
+        "type": "zilch-text-buttom",
+        "settings": {
+          "title": "Got more questions?",
+          "btn_text1": "FAQs.",
+          "btn_url1": "#",
+          "btn_text2": "SUPPORT",
+          "btn_url2": "#"
+        }
+      },
+      "zilch_header_gJ9Hc7": {
+        "type": "zilch-header",
+        "settings": {
+          "img": "shopify:\/\/shop_images\/logo.svg",
+          "imglink": "",
+          "img_width": 100,
+          "img_alignment": "0px auto 0px"
+        }
+      }
+    },
+    "order": [
+      "main",
+      "zegsu-header-bar",
+      "zilch_header_NTEwUN",
+      "zilch_banner_d3h44Y",
+      "zilch_about_us_9PimTz",
+      "zilch_text_image_dKiyjA",
+      "zilch_rich_text_xnkc8d",
+      "zilch_bg_section_mKWhR6",
+      "zilch_review_slider_eDcE8z",
+      "zilch_image_box_mHnWVg",
+      "zilch_text_buttom_7REYqm",
+      "zilch_header_gJ9Hc7"
+    ]
+  }
+  

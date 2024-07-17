@@ -1,0 +1,112 @@
+<style>
+.id_{{ section.id }}{
+  padding:50px 0px;
+  background-color:#232323;
+
+  }
+   
+.id_{{ section.id }} .container{
+    max-width:1200px;
+    width:100%;
+    margin:0px auto;
+}
+.id_{{ section.id }} .content {
+ max-width:630px;
+ margin:0px auto;
+}
+  
+.id_{{ section.id }} .content h2{
+    font-size: 46px;
+    line-height: 120%;
+    font-weight: 600;
+    color: #00d286;
+    margin:0px 0px 16px 0px;
+}  
+  
+.id_{{ section.id }} .content .des{
+    font-size: 20px;
+    line-height: 180%;
+    font-weight: 400;
+    color: #ffffff;
+    margin:0px 0px 0px 0px;
+}
+  
+.id_{{ section.id }} .content .sub_des{
+   margin:0px 0px 20px 0px;
+}
+    
+@media(max-width:768px){
+
+.id_{{ section.id }}{
+   padding:50px 20px;
+}
+
+
+.id_{{ section.id }} .content h2{
+    font-size: 38px;
+    text-align: center;
+    margin:0px 0px 10px 0px;
+}
+
+  
+.id_{{ section.id }} .content .sub_des{
+   margin:0px 0px 15px 0px;
+}
+  
+  
+.id_{{ section.id }} .content .des{
+    font-size: 18px;
+   text-align: center;
+}    
+
+
+
+  
+}
+</style>  
+
+<section class="id_{{ section.id }}">
+  <div class="container">
+     <div class="content">
+       <h2>{{ section.settings.title }}</h2>
+       <p class="sub_des des">{{ section.settings.sub_des }}</p>
+       <div class="des">{{ section.settings.des }}</div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Zilch Rich Text",
+    "settings": [
+
+      {
+        "type": "text",
+        "label": "Title",
+        "id": "title",
+        "default":"Responsible."
+      },
+      {
+        "type": "text",
+        "label": "Sub Title",
+        "id": "sub_des",
+        "default":"Why Pay now?."
+      },
+      {
+        "type": "richtext",
+        "label": "Description",
+        "id": "des",
+        "default":"<p>Get 2% back in Zilch Rewards instantly. Nice, right? Use your Rewards towards your next purchase or save them up for something special.</p>"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Zilch Rich Text"
+      }
+    ]
+  }
+{% endschema %}

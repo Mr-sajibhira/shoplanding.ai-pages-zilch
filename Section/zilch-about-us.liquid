@@ -1,0 +1,237 @@
+<style>
+.id_{{ section.id }}{
+  padding:80px 0px;
+  background-color:#ffffff;
+
+  }
+   
+.id_{{ section.id }} .container{
+    max-width:1200px;
+    width:100%;
+    margin:0px auto;
+}
+
+.id_{{ section.id }} .container .row{
+    display:flex;
+    flex-wrap:wrap;
+    margin:-16px;
+  align-items: center;
+}
+.id_{{ section.id }} .container .row .col{
+    max-width:50%;
+    width:100%;
+    box-sizing: border-box;
+    padding:16px;
+}
+
+.id_{{ section.id }} img{
+    max-width:100%;
+    object-fit: cover;
+    display:block;
+} 
+.id_{{ section.id }} .content{
+  text-align: center;
+}
+.id_{{ section.id }} .content h2{
+    font-size: 46px;
+    line-height: 120%;
+    font-weight: 600;
+    color: #00d286;
+    margin:0px 0px 16px 0px;
+}  
+  
+.id_{{ section.id }} .content .des{
+    font-size: 20px;
+    line-height: 180%;
+    font-weight: 400;
+    color: #000000;
+    margin:0px 0px 20px 0px;
+}    
+
+ .id_{{ section.id }} .content .review_img{
+   display:block;
+   max-width:100%;
+   width:100%;
+   margin:0px auto;
+ }
+
+  .id_{{ section.id }}  .content .btn{
+    display: inline-block;
+    text-decoration: none;
+    transition-duration:.3s;
+    background-color: #00d286;
+    color:#ffffff;
+     padding: 8px 24px;
+    border: 1px solid #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+    border-radius: 30px;
+}
+.id_{{ section.id }}  .content .btn:hover{
+    background-color: #6b706d;
+     color:#ffffff;
+}
+    
+@media(max-width:768px){
+
+.id_{{ section.id }}{
+   padding:50px 20px;
+    }
+
+  .id_{{ section.id }} .container .row{
+    margin:0px;
+    gap:30px;
+  }
+
+.id_{{ section.id }} .container .row .col{
+    max-width:100%;
+    padding:0px;
+}
+
+  .id_{{ section.id }} .content h2{
+    font-size: 38px;
+} 
+  
+.id_{{ section.id }} .content .des{
+    font-size: 18px;
+    margin:0px 0px 20px 0px;
+}    
+
+
+ 
+
+  
+}    
+
+</style>
+
+<section class="id_{{ section.id }}">
+
+  <div class="container">
+    <div class="row">
+       {% for block in section.blocks %}
+            {% case block.type %}
+                  {% when "image" %}
+                    <div class="col">
+                           {% if block.settings.img != blank %}
+                              <img style="aspect-ratio:{{ block.settings.aspect-ratio }};" src="{{ block.settings.img | image_url }}" alt="{{ block.settings.img.alt }}" width="100%" height="100%">
+                           {% endif %}
+                      </div>
+                  {% when "content" %}
+                  <div class="col">
+                    <div class="content">
+                       {% if block.settings.img != blank %}
+                              <img class="review_img" src="{{ block.settings.img | image_url }}" alt="{{ block.settings.img.alt }}" width="100%" height="100%">
+                         {% endif %}
+                      
+                      <h2>{{ block.settings.title }}</h2>
+                      <p class="des">{{ block.settings.des }}</p>
+                             {% if block.settings.btn_url != blank %}
+                            <a class="btn" href="{{ block.settings.btn_url }}">{{ block.settings.btn_text }}</a>
+                          {% endif %}
+                        
+                    </div>
+                
+                  </div>
+            {% endcase %}
+       {% endfor %}
+      </div>
+  </div>
+
+  
+</section>
+
+
+{% schema %}
+  {
+    "name": "Zilch About Us",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "image",
+        "name":"Image",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "image_picker",
+            "label": "Select Image",
+            "id": "img"
+          },
+          {
+            "type": "text",
+            "label": "Aspect Ratio",
+            "id": "aspect-ratio",
+            "default":"8/8"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "name":"Content",
+        "limit": 1,
+        "settings": [
+            {
+            "type": "image_picker",
+            "label": "Review  Image",
+            "id": "img"
+          },
+          {
+            "type": "text",
+            "label": "Title",
+            "id": "title",
+            "default":"See anything you like? Zilch it."
+          },
+          {
+            "type": "textarea",
+            "label": "Description",
+            "id": "des",
+            "default":"We have thousands of online stores with zero fees. And because we’re a Mastercard, you can shop absolutely anywhere else online with a fee of up to $3 for purchases over $10."
+          },
+            {
+            "type": "text",
+            "label": "Buttom Text",
+            "id": "btn_text",
+            "default":"Explore Brands"
+          },
+          {
+            "type": "url",
+            "label": "Buttom Url",
+            "id": "btn_url"
+          }
+
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Zilch About Us",
+        "blocks": [
+
+          {
+            "type": "image"
+          },
+          {
+            "type": "content"
+          }
+        ]
+      }
+    ]
+    
+  }
+{% endschema %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

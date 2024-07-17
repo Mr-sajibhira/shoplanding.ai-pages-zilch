@@ -1,0 +1,231 @@
+<style>
+.id_{{ section.id }}{
+  padding:100px 0px;
+  background-color:#e6fcf3;
+
+  }
+   
+.id_{{ section.id }} .container{
+    max-width:1200px;
+    width:100%;
+    margin:0px auto;
+}
+
+.id_{{ section.id }} .container .row{
+    display:flex;
+    flex-wrap:wrap;
+    margin:-16px;
+  align-items: center;
+}
+.id_{{ section.id }} .container .row .col{
+    max-width:50%;
+    width:100%;
+    box-sizing: border-box;
+    padding:16px;
+}
+
+.id_{{ section.id }} img{
+    max-width:100%;
+    object-fit: cover;
+    display:block;
+} 
+.id_{{ section.id }} .content{
+  text-align: center;
+}
+.id_{{ section.id }} .content h1{
+    font-size: 62px;
+    line-height: 100%;
+    font-weight: 700;
+    color: #00d286;
+    margin:0px 0px 16px 0px;
+}  
+  
+.id_{{ section.id }} .content .des{
+    font-size: 20px;
+    line-height: 180%;
+    font-weight: 400;
+    color: #000000;
+    margin:0px 0px 20px 0px;
+}    
+.id_{{ section.id }} .content .app_title{
+      font-size: 25px;
+    line-height: 120%;
+    font-weight: 700;
+    color: #000000;
+    margin:0px 0px 20px 0px;
+}
+ .id_{{ section.id }} .content .app_img{
+   display:block;
+   max-width:100px;
+   width:100%;
+   height:100px;
+   margin:0px auto;
+ }
+    
+@media(max-width:768px){
+
+.id_{{ section.id }}{
+   padding:80px 20px;
+    }
+
+  .id_{{ section.id }} .container .row{
+    margin:0px;
+    gap:30px;
+  }
+
+.id_{{ section.id }} .container .row .col{
+    max-width:100%;
+    padding:0px;
+}
+  .id_{{ section.id }} .content h1{
+    font-size: 62px;
+    line-height: 100%;
+    font-weight: 700;
+    color: #00d286;
+    margin:0px 0px 16px 0px;
+    display:block;
+     position: relative;
+    z-index:10;
+    
+}
+.id_{{ section.id }} .content .des{
+    font-size: 18px;
+    margin:0px 0px 15px 0px;
+}    
+.id_{{ section.id }} .content .app_title{
+      font-size: 20px;
+    margin:0px 0px 15px 0px;
+}
+
+ 
+
+  
+}    
+
+</style>
+
+<section class="id_{{ section.id }}">
+
+  <div class="container">
+    <div class="row">
+       {% for block in section.blocks %}
+            {% case block.type %}
+                  {% when "image" %}
+                    <div class="col">
+                           {% if block.settings.img != blank %}
+                              <img style="aspect-ratio:{{ block.settings.aspect-ratio }};" src="{{ block.settings.img | image_url }}" alt="{{ block.settings.img.alt }}" width="100%" height="100%">
+                           {% endif %}
+                      </div>
+                  {% when "content" %}
+                  <div class="col">
+                    <div class="content">
+                      <h1>{{ block.settings.title }}</h1>
+                      <p class="des">{{ block.settings.des }}</p>
+                      <p class="des">{{ block.settings.sub_des }}</p>
+                       <p class="app_title">{{ block.settings.app_title }}</p>
+                         {% if block.settings.app_img != blank %}
+                              <img class="app_img" src="{{ block.settings.app_img | image_url }}" alt="{{ block.settings.app_img.alt }}" width="100%" height="100%">
+                         {% endif %}
+                    </div>
+                
+                  </div>
+            {% endcase %}
+       {% endfor %}
+      </div>
+  </div>
+
+  
+</section>
+
+
+{% schema %}
+  {
+    "name": "Zilch Banner",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "image",
+        "name":"Image",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "image_picker",
+            "label": "Select Image",
+            "id": "img"
+          },
+          {
+            "type": "text",
+            "label": "Aspect Ratio",
+            "id": "aspect-ratio",
+            "default":"8/8"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "name":"Content",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "label": "Title",
+            "id": "title",
+            "default":"Pay Zilch."
+          },
+          {
+            "type": "textarea",
+            "label": "Description",
+            "id": "des",
+            "default":"Pay over 6 weeks with 0% APR, zero fees, zero overdraft fees and zero credit impact when you sign up. Or Pay now and get 2% back in Zilch Rewards instantly."
+          },
+            {
+            "type": "textarea",
+            "label": "Sub Description",
+            "id": "sub_des",
+            "default":"What’s not to love?"
+          },
+          {
+            "type": "textarea",
+            "label": "App Title",
+            "id": "app_title",
+            "default":"Download the App"
+          },
+          {
+            "type": "image_picker",
+            "label": "App Image",
+            "id": "app_img"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Zilch Banner",
+        "blocks": [
+          {
+            "type": "content"
+          },
+          {
+            "type": "image"
+          }
+        ]
+      }
+    ]
+    
+  }
+{% endschema %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

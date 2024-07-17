@@ -1,0 +1,152 @@
+<style>
+ .id_{{ section.id }}{
+   padding:120px 0px;
+   background-color:#232323;
+ }
+.id_{{ section.id }} .container{
+    max-width:1200px;
+    width:100%;
+    margin:0px auto;
+}
+.id_{{ section.id }} .container .row{
+  display:flex;
+  flex-wrap:wrap;
+  margin:-15px;
+}
+.id_{{ section.id }} .container .row .col{
+  max-width:33.33%;
+  width:100%;
+  box-sizing: border-box;
+  padding:15px;
+}
+.id_{{ section.id }} .title{
+    font-size: 28px;
+    line-height: 130%;
+    font-weight: 600;
+    color: #00D286;
+    margin: 0px 0px 10px 0px;
+}
+  
+.id_{{ section.id }} .image_box{
+  
+}
+.id_{{ section.id }} .image_box img{
+  max-width:100%;
+  display:block;
+  aspect-ratio: 8/8;
+  object-fit: cover;
+  margin:0px 0px 20px 0px;
+}
+
+.id_{{ section.id }} .image_box .des{
+    font-size: 20px;
+    line-height: 180%;
+    font-weight: 400;
+    color: #ffffff;
+    margin:0px 0px 0px 0px;
+}
+.id_{{ section.id }} .image_box .des p, .id_{{ section.id }} .image_box .des ul{
+  margin:0px;
+}
+
+@media(max-width:768px){
+  
+ .id_{{ section.id }}{
+   padding:60px 20px;
+ }
+  
+.id_{{ section.id }} .container .row{
+    margin:0px;
+    gap:60px;
+  }
+  
+.id_{{ section.id }} .container .row .col{
+  max-width:100%;
+  padding:0px;
+}
+
+.id_{{ section.id }} .title{
+    font-size: 30px;
+    margin:0px 0px 5px 0px;
+}
+
+  
+}
+  
+</style>
+
+<section class="id_{{ section.id }}">
+  <div class="container">
+    <div class="row">
+      {% for block in section.blocks %}
+        {%  case block.type%}
+          {% when "image_box" %}
+           <div class="col">
+             <div class="image_box">
+               {% if block.settings.img != blank %}
+                 <img src="{{ block.settings.img | image_url }}" alt="{{ block.settings.img.alt }}" width="100%" height="100%">
+               {% endif %}
+               <h3 class="title">{{ block.settings.title }}</h3>
+               <div class="des">{{ block.settings.text }}</div>
+              
+             </div>
+            </div>
+          {% endcase %}
+      {% endfor %}
+    </div>
+    
+    
+  </div>
+</section>
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Zilch Image Box",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "image_box",
+        "name":"Image box",
+        "settings": [
+          {
+            "type": "image_picker",
+            "label": "Select Image",
+            "id": "img"
+          },
+          {
+            "type": "text",
+            "label": "Title",
+            "id": "title",
+            "default":"Stay on top of payments."
+          },
+          {
+            "type": "richtext",
+            "label": "Description",
+            "id": "text",
+            "default":"<p>See all your purchases in the app, pay early whenever you like and always get notified of upcoming payments.</p>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Zilch Image Box",
+        "blocks": [
+          {
+            "type": "image_box",
+          },
+          {
+            "type": "image_box",
+          },
+          {
+            "type": "image_box",
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
